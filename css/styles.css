@@ -15,6 +15,8 @@
   /* others */
   --indent: 24px;
   --items: 4;
+  --time-allocation: cubic-bezier(0.4, 0, 0.2, 1);
+  --time-animation: 250ms;
 }
 /* Base styles */
 *,
@@ -38,6 +40,7 @@ p {
   margin: 0;
 }
 .link {
+  transition: color var(--time-animation) var(--time-allocation);
   text-decoration: none;
   color: currentColor;
 }
@@ -112,6 +115,7 @@ p {
 }
 /* лого */
 .header-logo {
+  transition: color var(--time-animation) var(--time-allocation);
   padding: 0px;
   margin-right: 76px;
   font-family: "Raleway", sans-serif;
@@ -123,6 +127,7 @@ p {
   color: #4d5ae5;
 }
 .logo-studio {
+  transition: color var(--time-animation) var(--time-allocation);
   color: var(--dark);
 }
 /* список навігації */
@@ -142,11 +147,27 @@ p {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+
 .header-nav-link {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
 }
+.current {
+  position: relative;
+  color: var(--pressed-state);
+}
+.current::after {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 4px;
+  content: "";
+  background-color: var(--pressed-state);
+  border-radius: 2px;
+}
+
 /* контакти */
 .header-address {
   font-style: normal;
@@ -203,6 +224,8 @@ p {
   letter-spacing: 0.02em;
 }
 .btn {
+  transition: background-color var(--time-animation) var(--time-allocation),
+    box-shadow var(--time-animation) var(--time-allocation);
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -219,14 +242,13 @@ p {
   margin-left: auto;
   margin-right: auto;
   gap: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
 }
 .bd .btn:hover,
 .bd .btn:focus {
   background-color: var(--pressed-state);
-  color: var(--white-background);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /*  */
@@ -343,19 +365,24 @@ p {
 }
 .name-position-text {
   text-align: center;
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 .socials-list {
   display: flex;
   justify-content: center;
   gap: var(--indent);
 }
+.socials-item {
+  width: 40px;
+  height: 40px;
+}
 .socials-links {
+  transition: background-color var(--time-animation) var(--time-allocation);
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
   background-color: var(--primary-brand);
   border-radius: 50%;
 }
@@ -379,12 +406,18 @@ p {
   justify-content: center;
   gap: var(--indent);
 }
+.customers-item {
+  width: 168px;
+  height: 88px;
+}
 .customers-link {
+  transition: border var(--time-animation) var(--time-allocation),
+    fill var(--time-animation) var(--time-allocation);
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 168px;
-  height: 88px;
   border: 1px solid var(--subtle-text);
   color: var(--subtle-text);
   border-radius: 4px;
@@ -420,11 +453,10 @@ p {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-}
-.footer-logo {
   color: var(--primary-brand);
 }
 .footer .logo-studio {
+  transition: color var(--time-animation) var(--time-allocation);
   display: inline-block;
   color: var(--light);
 }
@@ -447,12 +479,17 @@ p {
   display: flex;
   gap: 16px;
 }
+.footer-item {
+  width: 40px;
+  height: 40px;
+}
 .footer-link {
+  transition: background-color var(--time-animation) var(--time-allocation);
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
   background-color: var(--primary-brand);
   border-radius: 50%;
 }
@@ -483,6 +520,10 @@ p {
   letter-spacing: 0.04em;
 }
 .btn.portfolio {
+  transition: border var(--time-animation) var(--time-allocation),
+    background-color var(--time-animation) var(--time-allocation),
+    color var(--time-animation) var(--time-allocation),
+    box-shadow var(--time-animation) var(--time-allocation);
   display: inline-block;
   min-width: 69px;
   padding: 12px 24px;
@@ -511,12 +552,12 @@ p {
   border: 1px solid var(--accent);
 }
 .portfolio-link {
+  transition: box-shadow var(--time-animation) var(--time-allocation);
   display: block;
 }
 
 .portfolio-link:hover,
 .portfolio-link:focus {
-  border: 1px solid var(--light);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
