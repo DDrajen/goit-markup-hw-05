@@ -64,7 +64,9 @@
       <section class="hero section">
         <div class="hero-container container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="btn" type="button">Order Service</button>
+          <button data-modal-open class="hero-btn btn" type="button">
+            Order Service
+          </button>
         </div>
       </section>
       <!-- Секція 2. Переваги компанії -->
@@ -536,7 +538,7 @@
                 rel="noopener no-referrer"
                 aria-label="instagram icon"
               >
-                <svg class="footer-icon" width="24" height="24">
+                <svg class="footer-icon" width="24px" height="24px">
                   <use href="./images/icon.svg#icon-instagram"></use>
                 </svg>
               </a>
@@ -549,7 +551,7 @@
                 rel="noopener no-referrer"
                 aria-label="twitter icon"
               >
-                <svg class="footer-icon" width="24" height="24">
+                <svg class="footer-icon" width="24px" height="24px">
                   <use href="./images/icon.svg#icon-twitter"></use>
                 </svg>
               </a>
@@ -562,7 +564,7 @@
                 rel="noopener no-referrer"
                 aria-label="facebook icon"
               >
-                <svg class="footer-icon" width="24" height="24">
+                <svg class="footer-icon" width="24px" height="24px">
                   <use href="./images/icon.svg#icon-facebook"></use>
                 </svg>
               </a>
@@ -575,7 +577,7 @@
                 rel="noopener no-referrer"
                 aria-label="linkedin icon"
               >
-                <svg class="footer-icon" width="24" height="24">
+                <svg class="footer-icon" width="24px" height="24px">
                   <use href="./images/icon.svg#icon-linkedin"></use>
                 </svg>
               </a>
@@ -584,5 +586,16 @@
         </div>
       </div>
     </footer>
+    <!-- Модальне вікно для секції 1 -->
+    <div data-modal class="backdrop is-hidden">
+      <div class="modal">
+        <button data-modal-close class="modal-btn btn" type="button">
+          <svg class="modal-icon" width="8px" height="8px">
+            <use href="./images/icon.svg#icon-close-black"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
