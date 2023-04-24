@@ -652,6 +652,7 @@ p {
   border-radius: 50%;
 }
 .modal-icon {
+  transition: fill var(--time-animation) var(--time-allocation);
   fill: var(--dark);
 }
 .modal-btn:hover .modal-icon,
